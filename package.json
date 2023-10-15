@@ -1,0 +1,66 @@
+{
+  "name": "ibm-apic-ylbsc",
+  "displayName": "IBM APIC YLBSC",
+  "description": "Introducing the YAML multi-line Literal Block Scalar Converter (LBSC for short). This tool is engineered to enhance the readability of YAML files by transforming single-line strings with designated keys into multi-line literal block scalars. This conversion facilitates a more comprehensible representation of your YAML data, particularly beneficial during code reviews.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:yaml"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "yaml",
+        "aliases": [
+          "YAML",
+          "yaml"
+        ],
+        "extensions": [
+          ".yaml",
+          ".yml"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "ibm-apic-yaml-lbsc.format",
+        "title": "Convert single-line strings into multi-line literal block scalar strings"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "ibm-apic-yaml-lbsc.format",
+        "key": "ctrl+shift+alt+l"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.82.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "yaml": "^2.3.2"
+  }
+}
