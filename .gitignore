@@ -3,3 +3,8 @@ dist
 node_modules
 .vscode-test/
 *.vsix
+.eslintrc.json
+package-lock.json
+tsconfig.json
+vsc-extension-quickstart.md
+src/lbsc.py
